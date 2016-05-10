@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+spec:
+  containers:
+    - name: env-container
+      image: busybox:1.24
+      command: [ "/bin/sleep", "9999999" ]
+      #command: [ "/bin/sh", "-c", "env" ]
+      # command: [ "/bin/sh", "-c", "echo $(SOME_TYPE) $(THIS_IS_GREAT)" ]
+      env:
+        - name: SOME_TYPE
+          valueFrom:
+            configMapKeyRef:
+              name: lit-config
+              key: some.type
+        - name: THIS_IS_GREAT
+          valueFrom:
+            configMapKeyRef:
+              name: lit-config
+              key: this.is.great
+  restartPolicy: Never
