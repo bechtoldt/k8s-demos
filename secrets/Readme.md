@@ -39,14 +39,14 @@ data:
 You can consume multiple secrets by mounting it to a path using the volumes.
 
 ```
-$ cat secret-pod.yaml
+$ cat secret-file-pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: secret-pod
+  name: secret-file-pod
 spec:
   containers:
-    - name: secret-pod
+    - name: secret-file-pod
       image: busybox:1.24
       volumeMounts:
         - name: foo
@@ -57,10 +57,10 @@ spec:
       secret:
         secretName: my-secret
 
-$ kubectl create -f secret-pod.yaml
+$ kubectl create -f secret-file-pod.yaml
 ...
 
-$ kubectl logs secret-pod
+$ kubectl logs secret-file-pod
 root
 ```
 

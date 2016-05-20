@@ -6,8 +6,7 @@ spec:
   containers:
     - name: env-container
       image: busybox:1.24
-      command: [ "/bin/sleep", "9999999" ]
-      #command: [ "/bin/sh", "-c", "env" ]
+      command: [ "/bin/sh", "-c", "env" ]
       # command: [ "/bin/sh", "-c", "echo $(SOME_TYPE) $(THIS_IS_GREAT)" ]
       env:
         - name: SOME_TYPE
