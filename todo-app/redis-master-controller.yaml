@@ -17,6 +17,11 @@ spec:
       containers:
         - name: "redis-master"
           image: "redis:3"
+          resources:
+            limits:
+              cpu: 100m
+            requests:
+              cpu: 100m
           ports:
             - containerPort: 6379
               protocol: "TCP"
