@@ -2,6 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: todo-app
+  namespace: todo-app
+  labels:
+    name: todo-app
 spec:
   replicas: 3
   template:

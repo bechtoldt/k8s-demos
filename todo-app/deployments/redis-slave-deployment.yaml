@@ -2,6 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: redis-slave
+  namespace: todo-app
+  labels:
+    name: redis-slave
 spec:
   replicas: 2
   template:
