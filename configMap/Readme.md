@@ -34,7 +34,7 @@ We can also create a ConfigMap from literals.
 ```bash
 $ kubectl create configmap lit-config --from-literal=this.is.great=true --from-literal=some.type=nil
 
-$ kubectl get configmaps special-config -o yaml
+$ kubectl get configmaps lit-config -o yaml
 ```
 
 ## Consume configmaps
@@ -73,6 +73,6 @@ A ConfigMap can be injected as a configuration file.
 $ kubectl create -f config-file-pod.yaml
 ...
 
-$ ./cluster/kubectl.sh logs file-config-container
+$ kubectl logs file-config-container
 true
 ```
