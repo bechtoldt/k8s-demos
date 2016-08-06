@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: "slave"
-          image: "johscheuer/redis-slave:v1"
+          image: "johscheuer/redis-slave:v2"
           resources:
             limits:
               cpu: 100m
